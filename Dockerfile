@@ -3,7 +3,7 @@ RUN apt update -qq && apt install -y screen shellinabox python3 python3-pip
 RUN pip3 install spotdl
 RUN passwd -d root
 RUN mkdir /app
-RUN chmod +x start_shellinaboxd.sh start_shell.sh
 COPY start_shellinaboxd.sh start_shell.sh /usr/bin/
+RUN chmod +x /usr/bin/start_shellinaboxd.sh /usr/bin/start_shell.sh
 EXPOSE $PORT
 CMD ["/usr/bin/start_shellinaboxd.sh"]
